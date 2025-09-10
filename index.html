@@ -3,47 +3,225 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Recipe Website</title>
+    <title>Cook for Your Mood - Recipe Collection</title>
+    <meta name="description" content="Discover recipes that match your mood - from comforting classics to adventurous cuisine">
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-<header>
-    <h1>Welcome to the Recipe Website</h1>
-    <nav>
-        <ul>
-            <li><a href="index.html">Home</a></li>
-            <li><a href="recipes.html">Recipes</a></li>
-            <li><a href="about.html">About Us</a></li>
-            <li><a href="contact.html">Contact</a></li>
-        </ul>
-    </nav>
-</header>
-<main>
-    <section>
-        <h2>Featured Recipes</h2>
-        <article>
-            <h3>Spaghetti Carbonara</h3>
-            <img src="images/carbonara.jpg" alt="Spaghetti Carbonara" width="400">
-            <p>A classic Italian pasta dish made with eggs, cheese, pancetta, and pepper.</p>
-            <a href="recipes.html#spaghetti-carbonara">Read more</a>
-        </article>
-        <article>
-            <h3>Chicken Tikka Masala</h3>
-            <img src="images/chickentikka.jpg" alt="Chicken Tikka Masala" width="400">
-            <p>A popular Indian curry dish made with marinated chicken in a spiced tomato sauce.</p>
-            <a href="recipes.html#chicken-tikka-masala">Read more</a>
-        </article>
-    </section>
-    <section>
-        <h2>About Our Website</h2>
-        <p>This website is dedicated to sharing delicious recipes from around the world. Whether you're a beginner or an experienced cook, you'll find something to inspire your culinary adventures.</p>
-    </section>
-    <section>
-        <h2>Contact Us</h2>
-        <p>If you have any questions or suggestions, feel free to <a href="contact.html">reach out to us</a>.</p>
-    </section>
-</main>
-<footer>
-    <p>&copy; 2025 Recipe Website. All rights reserved.</p>
-</footer>
+    <main>
+        <!-- Hero Section -->
+        <section class="hero">
+            <div class="hero-content">
+                <h1>Cook for Your Mood</h1>
+                <p>Find the perfect recipe to match how you're feeling today</p>
+            </div>
+        </section>
+
+        <!-- Mood Selector -->
+        <section class="mood-selector">
+            <h2>What's your mood?</h2>
+            <div class="mood-filters">
+                <input type="radio" id="all" name="mood" value="all" checked>
+                <label for="all" class="mood-btn">All</label>
+
+                <input type="radio" id="comforting" name="mood" value="comforting">
+                <label for="comforting" class="mood-btn">Comforting 🤗</label>
+
+                <input type="radio" id="energizing" name="mood" value="energizing">
+                <label for="energizing" class="mood-btn">Energizing ⚡</label>
+
+                <input type="radio" id="romantic" name="mood" value="romantic">
+                <label for="romantic" class="mood-btn">Romantic 💖</label>
+
+                <input type="radio" id="party" name="mood" value="party">
+                <label for="party" class="mood-btn">Party 🎉</label>
+
+                <input type="radio" id="cozy" name="mood" value="cozy">
+                <label for="cozy" class="mood-btn">Cozy 🫖</label>
+
+                <input type="radio" id="adventurous" name="mood" value="adventurous">
+                <label for="adventurous" class="mood-btn">Adventurous 🌶️</label>
+            </div>
+        </section>
+
+        <!-- Recipe Grid -->
+        <section class="recipes">
+            <div class="recipe-grid">
+                <!-- Comforting Recipes -->
+                <article class="recipe-card comforting">
+                    <div class="recipe-image">
+                        <div class="image-placeholder" style="background: linear-gradient(135deg, #d4a574, #b8956a);"></div>
+                    </div>
+                    <div class="recipe-content">
+                        <h3>Classic Mac & Cheese</h3>
+                        <p>Creamy, cheesy comfort in a bowl. Perfect for when you need a warm hug from the inside.</p>
+                        <div class="recipe-meta">
+                            <span class="time">⏱️ 25 min</span>
+                            <span class="difficulty">👨‍🍳 Easy</span>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="recipe-card comforting cozy">
+                    <div class="recipe-image">
+                        <div class="image-placeholder" style="background: linear-gradient(135deg, #c17817, #a66914);"></div>
+                    </div>
+                    <div class="recipe-content">
+                        <h3>Homemade Chicken Soup</h3>
+                        <p>Soul-warming soup with tender chicken and vegetables. Medicine for the heart and body.</p>
+                        <div class="recipe-meta">
+                            <span class="time">⏱️ 45 min</span>
+                            <span class="difficulty">👨‍🍳 Medium</span>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Energizing Recipes -->
+                <article class="recipe-card energizing">
+                    <div class="recipe-image">
+                        <div class="image-placeholder" style="background: linear-gradient(135deg, #22c55e, #16a34a);"></div>
+                    </div>
+                    <div class="recipe-content">
+                        <h3>Power Green Smoothie</h3>
+                        <p>Packed with spinach, banana, and chia seeds. The perfect morning energy boost.</p>
+                        <div class="recipe-meta">
+                            <span class="time">⏱️ 5 min</span>
+                            <span class="difficulty">👨‍🍳 Easy</span>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="recipe-card energizing">
+                    <div class="recipe-image">
+                        <div class="image-placeholder" style="background: linear-gradient(135deg, #f59e0b, #d97706);"></div>
+                    </div>
+                    <div class="recipe-content">
+                        <h3>Quinoa Power Bowl</h3>
+                        <p>Nutrient-dense bowl with quinoa, roasted vegetables, and tahini dressing.</p>
+                        <div class="recipe-meta">
+                            <span class="time">⏱️ 30 min</span>
+                            <span class="difficulty">👨‍🍳 Medium</span>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Romantic Recipes -->
+                <article class="recipe-card romantic">
+                    <div class="recipe-image">
+                        <div class="image-placeholder" style="background: linear-gradient(135deg, #dc2626, #991b1b);"></div>
+                    </div>
+                    <div class="recipe-content">
+                        <h3>Chocolate Lava Cake</h3>
+                        <p>Decadent molten chocolate cake that melts hearts. Perfect for intimate evenings.</p>
+                        <div class="recipe-meta">
+                            <span class="time">⏱️ 20 min</span>
+                            <span class="difficulty">👨‍🍳 Medium</span>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="recipe-card romantic">
+                    <div class="recipe-image">
+                        <div class="image-placeholder" style="background: linear-gradient(135deg, #7c3aed, #5b21b6);"></div>
+                    </div>
+                    <div class="recipe-content">
+                        <h3>Creamy Mushroom Risotto</h3>
+                        <p>Silky risotto with wild mushrooms and parmesan. Elegance on a plate.</p>
+                        <div class="recipe-meta">
+                            <span class="time">⏱️ 35 min</span>
+                            <span class="difficulty">👨‍🍳 Hard</span>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Party Recipes -->
+                <article class="recipe-card party">
+                    <div class="recipe-image">
+                        <div class="image-placeholder" style="background: linear-gradient(135deg, #ec4899, #be185d);"></div>
+                    </div>
+                    <div class="recipe-content">
+                        <h3>Rainbow Veggie Tacos</h3>
+                        <p>Colorful, fun tacos with fresh vegetables and zesty lime crema. Perfect for gatherings!</p>
+                        <div class="recipe-meta">
+                            <span class="time">⏱️ 20 min</span>
+                            <span class="difficulty">👨‍🍳 Easy</span>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="recipe-card party">
+                    <div class="recipe-image">
+                        <div class="image-placeholder" style="background: linear-gradient(135deg, #06b6d4, #0891b2);"></div>
+                    </div>
+                    <div class="recipe-content">
+                        <h3>Mini Slider Platter</h3>
+                        <p>Bite-sized burgers with various toppings. Everyone's favorite party food.</p>
+                        <div class="recipe-meta">
+                            <span class="time">⏱️ 40 min</span>
+                            <span class="difficulty">👨‍🍳 Medium</span>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Cozy Recipes -->
+                <article class="recipe-card cozy">
+                    <div class="recipe-image">
+                        <div class="image-placeholder" style="background: linear-gradient(135deg, #92400e, #78350f);"></div>
+                    </div>
+                    <div class="recipe-content">
+                        <h3>Cinnamon Apple Crumble</h3>
+                        <p>Warm, spiced apples topped with buttery crumble. Cozy autumn vibes in every bite.</p>
+                        <div class="recipe-meta">
+                            <span class="time">⏱️ 50 min</span>
+                            <span class="difficulty">👨‍🍳 Easy</span>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="recipe-card cozy">
+                    <div class="recipe-image">
+                        <div class="image-placeholder" style="background: linear-gradient(135deg, #a855f7, #7c3aed);"></div>
+                    </div>
+                    <div class="recipe-content">
+                        <h3>Hot Chocolate Marshmallow</h3>
+                        <p>Rich, velvety hot chocolate topped with fluffy marshmallows. Winter in a mug.</p>
+                        <div class="recipe-meta">
+                            <span class="time">⏱️ 10 min</span>
+                            <span class="difficulty">👨‍🍳 Easy</span>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Adventurous Recipes -->
+                <article class="recipe-card adventurous">
+                    <div class="recipe-image">
+                        <div class="image-placeholder" style="background: linear-gradient(135deg, #dc2626, #b91c1c);"></div>
+                    </div>
+                    <div class="recipe-content">
+                        <h3>Spicy Korean Kimchi Ramen</h3>
+                        <p>Fiery ramen with fermented kimchi and soft-boiled egg. A flavor adventure awaits!</p>
+                        <div class="recipe-meta">
+                            <span class="time">⏱️ 25 min</span>
+                            <span class="difficulty">👨‍🍳 Medium</span>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="recipe-card adventurous">
+                    <div class="recipe-image">
+                        <div class="image-placeholder" style="background: linear-gradient(135deg, #059669, #047857);"></div>
+                    </div>
+                    <div class="recipe-content">
+                        <h3>Thai Green Curry</h3>
+                        <p>Aromatic curry with coconut milk, herbs, and chilies. Transport your taste buds to Thailand.</p>
+                        <div class="recipe-meta">
+                            <span class="time">⏱️ 40 min</span>
+                            <span class="difficulty">👨‍🍳 Hard</span>
+                        </div>
+                    </div>
+                </article>
+            </div>
+        </section>
+    </main>
 </body>
 </html>
