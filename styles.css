@@ -42,7 +42,7 @@ body {
 
 .hero h1 {
     font-size: clamp(2.5rem, 5vw, 4rem);
-    font-weight: bold;
+font-weight: bold;
     margin-bottom: 1rem;
     text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
 }
@@ -52,7 +52,6 @@ body {
     margin-bottom: 2rem;
     opacity: 0.95;
 }
-
 /* Mood Selector */
 .mood-selector {
     max-width: 1200px;
@@ -136,16 +135,20 @@ body {
     grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
     gap: 2rem;
     align-items: start;
+    position: relative;
 }
 
+/* Recipe Cards */
 .recipe-card {
     background: white;
     border-radius: 16px;
     overflow: hidden;
     box-shadow: 0 4px 20px rgba(139, 69, 19, 0.1);
-    transition: all 0.3s ease;
     position: relative;
-    display: block;
+    display: none;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .recipe-card:hover {
@@ -153,6 +156,7 @@ body {
     box-shadow: 0 8px 30px rgba(139, 69, 19, 0.15);
 }
 
+/* Recipe Images */
 .recipe-image {
     width: 100%;
     height: 200px;
@@ -160,24 +164,15 @@ body {
     overflow: hidden;
 }
 
-.image-placeholder {
+.recipe-image img {
     width: 100%;
     height: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: white;
-    font-size: 3rem;
-    position: relative;
+    object-fit: cover;
+    border-radius: 12px;
+    display: block;
 }
 
-.image-placeholder::after {
-    content: '🍴';
-    position: absolute;
-    font-size: 4rem;
-    opacity: 0.3;
-}
-
+/* Recipe Content */
 .recipe-content {
     padding: 1.5rem;
 }
@@ -215,12 +210,7 @@ body {
     border: 1px solid #e6d3b7;
 }
 
-/* CSS-Only Filtering */
-.recipe-card {
-    display: block;
-    animation: fadeIn 0.5s ease-in;
-}
-
+/* Fade Animations */
 @keyframes fadeIn {
     from { opacity: 0; transform: translateY(20px); }
     to { opacity: 1; transform: translateY(0); }
@@ -228,10 +218,27 @@ body {
 
 @keyframes fadeOut {
     from { opacity: 1; transform: translateY(0); }
-    to { opacity: 0; transform: translateY(-20px); }
+    to { opacity: 0; transform: translateY(20px); }
 }
 
-/* Hide all cards initially when specific mood is selected */
+/* Filtering Logic Fix */
+#all:checked ~ .recipes .recipe-card {
+    display: block;
+    opacity: 1;
+    transform: translateY(0);
+}
+
+#comforting:checked ~ .recipes .comforting,
+#energizing:checked ~ .recipes .energizing,
+#romantic:checked ~ .recipes .romantic,
+#party:checked ~ .recipes .party,
+#cozy:checked ~ .recipes .cozy,
+#adventurous:checked ~ .recipes .adventurous {
+    display: block;
+    opacity: 1;
+    transform: translateY(0);
+}
+
 #comforting:checked ~ .recipes .recipe-card:not(.comforting),
 #energizing:checked ~ .recipes .recipe-card:not(.energizing),
 #romantic:checked ~ .recipes .recipe-card:not(.romantic),
@@ -239,11 +246,8 @@ body {
 #cozy:checked ~ .recipes .recipe-card:not(.cozy),
 #adventurous:checked ~ .recipes .recipe-card:not(.adventurous) {
     display: none;
-}
-
-/* Show all cards when "all" is selected (default) */
-#all:checked ~ .recipes .recipe-card {
-    display: block;
+    opacity: 0;
+    transform: translateY(20px);
 }
 
 /* Responsive Design */
@@ -313,28 +317,3 @@ body {
 .recipe-card:hover::before {
     opacity: 1;
 }
-
-/* Smooth transitions for filtering */
-.recipe-grid {
-    position: relative;
-}
-
-.recipe-card {
-    transition: all 0.3s ease, display 0s;
-}
-/* Recipe card image styling */
-.recipe-image {
-  width: 100%;
-  height: 200px; /* you can adjust this */
-  overflow: hidden;
-  border-radius: 12px;
-}
-
-.recipe-image img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover; /* crops nicely without distortion */
-  border-radius: 12px; /* matches card corners */
-  display: block;
-}
-

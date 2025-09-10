@@ -21,37 +21,33 @@
         <section class="mood-selector">
             <h2>What's your mood?</h2>
             <div class="mood-filters">
-                <input type="radio" id="all" name="mood" value="all" checked>
                 <label for="all" class="mood-btn">All</label>
-
-                <input type="radio" id="comforting" name="mood" value="comforting">
                 <label for="comforting" class="mood-btn">Comforting 🤗</label>
-
-                <input type="radio" id="energizing" name="mood" value="energizing">
                 <label for="energizing" class="mood-btn">Energizing ⚡</label>
-
-                <input type="radio" id="romantic" name="mood" value="romantic">
                 <label for="romantic" class="mood-btn">Romantic 💖</label>
-
-                <input type="radio" id="party" name="mood" value="party">
                 <label for="party" class="mood-btn">Party 🎉</label>
-
-                <input type="radio" id="cozy" name="mood" value="cozy">
                 <label for="cozy" class="mood-btn">Cozy 🫖</label>
-
-                <input type="radio" id="adventurous" name="mood" value="adventurous">
                 <label for="adventurous" class="mood-btn">Adventurous 🌶️</label>
             </div>
         </section>
+
+        <!-- Hidden radio inputs (moved outside mood-selector) -->
+        <input type="radio" id="all" name="mood" value="all" checked hidden>
+        <input type="radio" id="comforting" name="mood" value="comforting" hidden>
+        <input type="radio" id="energizing" name="mood" value="energizing" hidden>
+        <input type="radio" id="romantic" name="mood" value="romantic" hidden>
+        <input type="radio" id="party" name="mood" value="party" hidden>
+        <input type="radio" id="cozy" name="mood" value="cozy" hidden>
+        <input type="radio" id="adventurous" name="mood" value="adventurous" hidden>
 
         <!-- Recipe Grid -->
         <section class="recipes">
             <div class="recipe-grid">
                 <!-- Comforting Recipes -->
                 <article class="recipe-card comforting">
-                  <div class="recipe-image">
-                    <img src="images/mac-cheese.jpg" alt="Classic Mac & Cheese">
-                  </div>  
+                    <div class="recipe-image">
+                        <img src="images/mac-cheese.jpg" alt="Classic Mac & Cheese">
+                    </div>  
                     <div class="recipe-content">
                         <h3>Classic Mac & Cheese</h3>
                         <p>Creamy, cheesy comfort in a bowl. Perfect for when you need a warm hug from the inside.</p>
@@ -64,7 +60,8 @@
 
                 <article class="recipe-card comforting cozy">
                     <div class="recipe-image">
-                        <img src="images/chickensoup.jpg" alt="Homemade Chicken Soup"></div>
+                        <img src="images/chickensoup.jpg" alt="Homemade Chicken Soup">
+                    </div>
                     <div class="recipe-content">
                         <h3>Homemade Chicken Soup</h3>
                         <p>Soul-warming soup with tender chicken and vegetables. Medicine for the heart and body.</p>
@@ -79,7 +76,7 @@
                 <article class="recipe-card energizing">
                     <div class="recipe-image">
                         <img src="images/greensmoothie.jpg" alt="Power Green Smoothie">
-                </div>
+                    </div>
                     <div class="recipe-content">
                         <h3>Power Green Smoothie</h3>
                         <p>Packed with spinach, banana, and chia seeds. The perfect morning energy boost.</p>
@@ -165,7 +162,6 @@
                 <!-- Cozy Recipes -->
                 <article class="recipe-card cozy">
                     <div class="recipe-image">
-                        
                         <img src="images/applecrumble.jpg" alt="Cinnamon Apple Crumble">
                     </div>
                     <div class="recipe-content">
@@ -195,7 +191,6 @@
                 <!-- Adventurous Recipes -->
                 <article class="recipe-card adventurous">
                     <div class="recipe-image">
-                        
                         <img src="images/ramen.jpg" alt="Spicy Korean Kimchi Ramen">
                     </div>
                     <div class="recipe-content">
